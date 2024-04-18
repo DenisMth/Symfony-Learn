@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% form_theme formArticle 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+<h2>Create a new article</h2>
+<section class="m-5">
+{{ form_start(formArticle)}}
+
+{{ form_row(formArticle.title, {'attr': {'placeholder': "Title of the article"} }) }}
+{{ form_row(formArticle.content, {'attr': {'placeholder': "Content of the article"} }) }}
+{{ form_row(formArticle.picture, {'attr': {'placeholder': "Link to the picture of the article"} }) }}
+<button type="submit" class="btn btn-success">
+    {% if editMode %}
+    Save changes
+    {% else %}
+    Add new article
+    {% endif %}
+</button>
+{{ form_end(formArticle) }}
+</section>
+
+{% endblock %}

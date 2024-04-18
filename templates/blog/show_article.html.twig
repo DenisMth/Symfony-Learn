@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h2>This is a Test everyone !</h2>
+<article>
+    <h3>{{ article.title }}</h3>
+    <div class="metadata">Written the {{ article.createdAt | date('d/m/Y') }} at {{ article.createdAt | date('H:i') }} in the Sports category</div>
+    <img src={{ article.picture }} alt="Image of the article" title="Image of the article">
+    <p>{{ article.content }}</p>
+    </article>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<h2>Hello World !</h2>
+<container class="d-flex flex-wrap p-2 justify-content-around bd-highlight">
+{% for article in articles %}
+<article class="bg-primary rounded-3 m-2 p-3 position-relative">
+<h3>{{ article.title }}</h3>
+<div class="metadata">Written the {{ article.createdAt | date('d/m/Y') }} at {{ article.createdAt | date('H:i') }} in the Sports category</div>
+<img src={{ article.picture }} alt="Image of the article" title="Image of the article">
+<p>{{ article.content }}</p>
+<a href="{{ path('article_show', {'id' : article.id}) }}" class="m-2 btn btn-success position-absolute bottom-0 end-0">More</a>
+</article>
+{% endfor %}
+</container>
+
+{% endblock %}
