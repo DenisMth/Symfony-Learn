@@ -15,7 +15,7 @@ use App\Form\ArticleType;
 
 class BlogController extends AbstractController{
 
-    #[Route('/blog', name: 'blog_home')]
+    #[Route('/', name: 'blog_home')]
     public function home(ArticleRepository $repo):Response
     {
 
@@ -24,7 +24,7 @@ class BlogController extends AbstractController{
         return $this->render('blog/home.html.twig', ['articles' => $articles,]);
     }
 
-    #[Route('/blog/articles', name: 'all_articles')]
+    #[Route('/articles', name: 'all_articles')]
     public function allArticles(ArticleRepository $repo):Response
     {
 
@@ -33,8 +33,8 @@ class BlogController extends AbstractController{
         return $this->render('blog/articles.html.twig', ['articles' => $articles,]);
     }
 
-    #[Route('/blog/article/new', name: 'new_article')]
-    #[Route('/blog/article/{id}/edit', name: 'edit_article')]
+    #[Route('/article/new', name: 'new_article')]
+    #[Route('/article/{id}/edit', name: 'edit_article')]
     public function form(Article $article = null, Request $request, EntityManagerInterface $manager):Response
     {
         if(!$article){
@@ -62,7 +62,7 @@ class BlogController extends AbstractController{
         ]);
     }
 
-    #[Route('/blog/article/{id}', name: 'article_show')]
+    #[Route('/article/{id}', name: 'article_show')]
     public function showArticle(Article $article):Response
     {
         return $this->render('blog/show_article.html.twig', ['article' => $article]);
