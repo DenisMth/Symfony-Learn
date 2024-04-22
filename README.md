@@ -9,7 +9,7 @@ A simple website created to learn about a lot of the features of Symfony, includ
 ## Instructions
 
 - Travel through the homepage, articles page and new article page through the nav bar.
-- 
+
 ![image](https://github.com/DenisMth/Symfony-Learn/assets/151639749/80978dc1-db28-4546-9a1e-f8bf50159d02)
 
 - View the entirety of an article by clicking the "more" button
